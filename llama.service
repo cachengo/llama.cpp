@@ -1,0 +1,9 @@
+[Unit]
+Description=Minio
+[Service]
+LimitNOFILE=500000
+ExecStart=/home/.cachengo/llama.cpp/server -m /home/.cachengo/models/stablelm-zephyr-3b.Q4_0.gguf -c 2048 --host :: --port 8000
+Restart=always
+StartLimitBurst=0
+[Install]
+WantedBy=multi-user.target
